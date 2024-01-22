@@ -1,0 +1,9 @@
+from typing import List
+
+def moveZeroes(self, nums: List[int]) -> None:
+    """
+    Do not return anything, modify nums in-place instead.
+    """
+    for i in nums:
+        if i is 0:
+            nums.append(nums.pop(nums.index(0)))
