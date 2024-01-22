@@ -1,6 +1,3 @@
-# Runtime: 16ms (99.98%)
-# Memory: 17.48MB (17.52%)
-
 def reverse(x: int) -> int:
     string = str(x)
     string = string[::-1]
