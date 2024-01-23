@@ -14,7 +14,6 @@ public class Solution
     public ListNode MergeKLists(ListNode[] lists)
     {
         List<int> vals = new List<int>();
-        Console.WriteLine(lists.Length);
         for (int i = 0; i < lists.Length; i++)
         {
             while (lists[i] != null)
