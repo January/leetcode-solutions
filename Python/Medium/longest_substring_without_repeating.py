@@ -1,33 +1,9 @@
-# Unfinished
-
 def lengthOfLongestSubstring(s: str) -> int:
-    chars = []
-    unique_lens = []
-    combos = []
-    current_len = 0
-    for char in s:
-        if char in chars:
-            print("new combo triggered")
-            unique_lens.append(current_len)
-            combos = combos + [chars]
-            chars = []
-            current_len = 0
-        else:
-            chars.append(char)
-            print(char)
-            print(chars)
-            current_len += 1
-            #print(current_len)
-            #print(unique_lens)
-            #print(chars)
-
-    #print (combos)
-    max_len = 0
-    for combo in combos:
-        #print(combo)
-        if len(combo) > max_len:
-            max_len = len(combo)
-
-    return max_len
-
-print(lengthOfLongestSubstring("pwwkew"))
+    start = result = 0
+    seen = {}
+    for i, char in enumerate(s):
+        if seen.get(char, -1) >= start:
+            start = seen[char] + 1
+        result = max(result, i - start + 1)
+        seen[char] = i
+    return result
